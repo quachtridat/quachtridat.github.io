@@ -219,7 +219,7 @@ header .carousel-indicators li {
 
 .purchase{
 	overflow: hidden;
-	padding: 100px 0px 100px 0px;
+	/*padding: 100px 0px 100px 0px;*/
 	min-height: 200px;
 }
 
