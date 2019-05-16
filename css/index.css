@@ -1,0 +1,17 @@
+.h-100v {
+  height: 100vh;
+}
+
+.carousel-caption:not(:hover) {
+  opacity: 1;
+  transition: 0.1s;
+  transition-timing-function: linear;
+}
+.carousel-caption:hover {
+  opacity: 0.75;
+  transition: 0.1s;
+  transition-timing-function: linear;
+}
+.carousel-item img {
+  max-height: 95vh;
+}
