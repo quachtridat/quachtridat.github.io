@@ -1,8 +1,12 @@
 import path from "path";
 import { getPostsDirectory } from "../globals.config";
 import matter from "gray-matter";
-import remark from "remark";
-import html from "remark-html";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeFormat from "rehype-format";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
 import fs from "fs";
 
 export interface GetPostData {
@@ -20,7 +24,14 @@ export const getPostData = async (id: string, postsDir?: string) => {
 
   const matterResult = matter(fileContent);
 
-  const processedContent = await remark().use(html).process(matterResult.content);
+  const processedContent =
+    await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeSanitize)
+    .use(rehypeFormat)
+    .use(rehypeStringify)
+    .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
 
