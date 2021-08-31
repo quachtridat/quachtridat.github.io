@@ -26,12 +26,12 @@ export const getPostData = async (id: string, postsDir?: string) => {
 
   const processedContent =
     await unified()
-    .use(remarkParse)
-    .use(remarkRehype)
-    .use(rehypeSanitize)
-    .use(rehypeFormat)
-    .use(rehypeStringify)
-    .process(matterResult.content);
+      .use(remarkParse)
+      .use(remarkRehype)
+      .use(rehypeSanitize)
+      .use(rehypeFormat)
+      .use(rehypeStringify)
+      .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
 
