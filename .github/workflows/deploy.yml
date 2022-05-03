@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Build
         uses: ./.github/workflows/build.yml
       - name: Export
