@@ -23,10 +23,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node v$NODE_VERSION
+      - name: Setup Node v${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: $NODE_VERSION
+          node-version: ${{ env.NODE_VERSION }}
       - name: Install Node packages
         run: npm ci
       - name: Linting check
