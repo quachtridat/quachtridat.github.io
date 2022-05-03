@@ -14,8 +14,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup Node v${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Node packages
+        run: npm ci
+      - name: Linting check
+        run: npm run lint
       - name: Build
-        uses: quachtridat/quachtridat.github.io/.github/workflows/build.yml@master
+        run: npm run build
       - name: Export
         run: npm run export
       - name: Deploy to GitHub Pages
