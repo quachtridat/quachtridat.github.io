@@ -60,6 +60,14 @@ export const Home = ({ selfIntro }: HomeProps) => {
             })
           }
         </section>
+
+        <section className="mt-14">
+            <Link href="/static/docs/resume.pdf">
+              <span className="p-3 text-lg text-black transition-colors duration-500 ease-in-out bg-white border-2 border-black border-solid shadow-lg focus:outline-none focus:ring focus:ring-offset-2 hover:text-white hover:bg-black px-7 rounded-xl dark:border-white dark:bg-black dark:hover:bg-white dark:text-white dark:hover:text-black">
+                My Resume
+              </span>
+            </Link>
+        </section>
       </main>
 
       <footer className="w-full h-10 border-gray-200 dark:border-gray-800">
