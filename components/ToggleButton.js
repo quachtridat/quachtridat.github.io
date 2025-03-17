@@ -1,4 +1,5 @@
 // GitHub: webomnizz/react-toggle-button
+// Modified to work with React's deprecation of `defaultProps`.
 
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -31,7 +32,13 @@ export const ToggleButton = ( props ) => {
     }
 
     const getIcon = (type) => {
-        const { icons } = props;
+        const {
+            icons = {
+                checked: <CheckedIcon />, 
+                unchecked: <UncheckedIcon />
+            }
+        } = props;
+
         if ( ! icons ) {
             return null;
         }
@@ -61,13 +68,6 @@ export const ToggleButton = ( props ) => {
         </div>
     );
 }
-
-ToggleButton.defaultProps = {
-    icons: {
-        checked: <CheckedIcon />, 
-        unchecked: <UncheckedIcon />
-    }
-};
 
 ToggleButton.propTypes = {
     disabled: PropTypes.bool,

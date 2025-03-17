@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer components {
   .wrg-toggle {
@@ -100,3 +98,5 @@
     transition: opacity 0.25s;
   }
 }
+
+@custom-variant dark (&:is(.dark *));
