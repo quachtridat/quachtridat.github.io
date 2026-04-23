@@ -1,7 +1,7 @@
 // GitHub: webomnizz/react-toggle-button
 // Modified to work with React's deprecation of `defaultProps`.
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -10,14 +10,8 @@ const UncheckedIcon = () => <>🌞</>;
 
 export const ToggleButton = ( props ) => {
 
-    const [toggle, setToggle] = useState(false);
     const { defaultChecked, onChange, disabled, className } = props;
-
-    useEffect(() => {
-        if (defaultChecked) {
-            setToggle(defaultChecked)
-        }
-    }, [defaultChecked]);
+    const [toggle, setToggle] = useState(defaultChecked || false);
 
     const triggerToggle = () => {
         if ( disabled ) {

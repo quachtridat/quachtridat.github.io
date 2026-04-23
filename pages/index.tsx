@@ -62,11 +62,11 @@ export const Home = ({ selfIntro }: HomeProps) => {
         </section>
 
         <section className="mt-14">
-            <Link href="/static/docs/resume.pdf">
+            <a href="/static/docs/resume.pdf">
               <span className="p-3 text-lg text-black transition-colors duration-500 ease-in-out bg-white border-2 border-black border-solid shadow-lg focus:outline-none focus:ring focus:outline-offset-2 hover:text-white hover:bg-black px-7 rounded-xl dark:border-white dark:bg-black dark:hover:bg-white dark:text-white dark:hover:text-black">
                 My Resume
               </span>
-            </Link>
+            </a>
         </section>
       </main>
 

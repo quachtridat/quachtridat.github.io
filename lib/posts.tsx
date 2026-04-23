@@ -13,7 +13,7 @@ export interface GetPostData {
   id: string;
   content: string;
   contentHtml: string;
-  [key: string]: any;
+  [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export const getPostData = async (id: string, postsDir?: string) => {
