@@ -23,4 +23,11 @@ export default defineConfig([
   next.configs.recommended,
   ...nextCoreWebVitals,
   ...tseslint.configs.recommended,
+  {
+    settings: {
+      react: {
+        version: "19",
+      },
+    },
+  },
 ]);
